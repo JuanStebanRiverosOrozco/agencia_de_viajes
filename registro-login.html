@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acceso - Expreso Internacional</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fondo-playa {
+      background-image: linear-gradient(rgba(0, 49, 83, 0.6), rgba(0, 49, 83, 0.6)),
+        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=60');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen fondo-playa flex items-center justify-center text-slate-800">
+  <div class="bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-xl w-full max-w-md border border-white/30">
+    <div class="text-center mb-6">
+      <div class="mx-auto w-14 h-14 bg-yellow-400 rounded-md flex items-center justify-center text-teal-900 font-bold text-2xl">🌍</div>
+      <h1 class="text-2xl font-bold mt-3 text-teal-800">Bienvenido a Expreso Internacional</h1>
+      <p class="text-slate-600 text-sm">Inicia sesión o crea tu cuenta para comenzar tu próxima aventura</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="flex justify-around mb-6 border-b border-teal-100">
+      <button id="tab-login" class="w-1/2 pb-2 text-center font-semibold text-teal-700 border-b-2 border-teal-700">Iniciar sesión</button>
+      <button id="tab-register" class="w-1/2 pb-2 text-center font-semibold text-slate-500 hover:text-teal-700">Registrarse</button>
+    </div>
+
+    <!-- Formulario de inicio de sesión -->
+    <form id="form-login" action="./php/login.php" method="POST" class="space-y-5">
+      <div>
+        <label class="block text-sm font-medium text-slate-700 mb-1">Correo electrónico</label>
+        <input type="email" name="correo" required placeholder="tuemail@ejemplo.com" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-slate-700 mb-1">Contraseña</label>
+        <input type="password" name="clave" required placeholder="••••••••" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400">
+      </div>
+      <button type="submit" class="w-full py-2 rounded-lg bg-yellow-400 hover:bg-yellow-500 text-teal-900 font-semibold shadow-md">Iniciar sesión</button>
+    </form>
+
+    <!-- Formulario de registro -->
+    <form id="form-register" action="./php/registrar.php" method="POST" class="space-y-5 hidden">
+      <div>
+        <label class="block text-sm font-medium text-slate-700 mb-1">Nombre completo</label>
+        <input type="text" name="nombre" required placeholder="Tu nombre" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-slate-700 mb-1">Correo electrónico</label>
+        <input type="email" name="correo" required placeholder="tuemail@ejemplo.com" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-slate-700 mb-1">Contraseña</label>
+        <input type="password" name="clave" required placeholder="Crea una contraseña" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-slate-700 mb-1">Selecciona tu rol</label>
+        <select name="rol" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
+          <option value="">Seleccionar...</option>
+          <option value="administrador">Administrador</option>
+          <option value="usuario">Usuario</option>
+          <option value="invitado">Cliente Invitado</option>
+        </select>
+      </div>
+      <button type="submit" class="w-full py-2 rounded-lg bg-yellow-400 hover:bg-yellow-500 text-teal-900 font-semibold shadow-md">Crear cuenta</button>
+    </form>
+  </div>
+
+  <script>
+    const tabLogin = document.getElementById('tab-login');
+    const tabRegister = document.getElementById('tab-register');
+    const formLogin = document.getElementById('form-login');
+    const formRegister = document.getElementById('form-register');
+
+    tabLogin.addEventListener('click', () => {
+      formLogin.classList.remove('hidden');
+      formRegister.classList.add('hidden');
+      tabLogin.classList.add('text-teal-700', 'border-b-2', 'border-teal-700');
+      tabRegister.classList.remove('text-teal-700', 'border-b-2', 'border-teal-700');
+      tabRegister.classList.add('text-slate-500');
+    });
+
+    tabRegister.addEventListener('click', () => {
+      formLogin.classList.add('hidden');
+      formRegister.classList.remove('hidden');
+      tabRegister.classList.add('text-teal-700', 'border-b-2', 'border-teal-700');
+      tabLogin.classList.remove('text-teal-700', 'border-b-2', 'border-teal-700');
+      tabLogin.classList.add('text-slate-500');
+    });
+  </script>
+</body>
+</html>

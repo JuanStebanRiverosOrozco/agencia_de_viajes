@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🌍 Expreso Internacional</title>
+  <meta name="description" content="Expreso Internacional - Viajes, experiencias y aventuras alrededor del mundo" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .hero-bg {
+      background-image: linear-gradient(rgba(0, 49, 83, 0.5), rgba(0, 49, 83, 0.5)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=60');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+
+<body class="antialiased bg-gradient-to-br from-sky-50 via-teal-50 to-yellow-50 text-slate-800">
+
+  <!-- NAV -->
+  <header class="bg-gradient-to-r from-teal-700 to-cyan-600 shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16 text-white">
+        <a href="#" class="flex items-center gap-3">
+          <span
+            class="inline-block w-10 h-10 rounded-md bg-yellow-400 flex items-center justify-center font-bold text-teal-800">🌍</span>
+          <div>
+            <h1 class="text-lg font-semibold">Expreso Internacional</h1>
+            <p class="text-xs text-teal-100 -mt-1">Explora, vive y recuerda</p>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 font-medium">
+          <a href="#destinos" class="hover:text-yellow-300">Destinos</a>
+          <a href="#servicios" class="hover:text-yellow-300">Servicios</a>
+          <a href="#testimonios" class="hover:text-yellow-300">Testimonios</a>
+          <a href="#contacto" class="hover:text-yellow-300">Contacto</a>
+          <a href="registro-login.html"
+            class="ml-4 px-4 py-2 rounded-md bg-yellow-400 hover:bg-yellow-500 text-teal-900">Reservar</a>
+        </nav>
+
+        <!-- menú móvil -->
+        <div class="md:hidden">
+          <input type="checkbox" id="menu-toggle" class="peer hidden" />
+          <label for="menu-toggle" class="p-2 rounded-md cursor-pointer border border-white/30">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </label>
+          <div
+            class="absolute right-4 mt-2 w-52 bg-white rounded-lg shadow-lg p-4 origin-top-right transform scale-95 opacity-0 transition-all peer-checked:opacity-100 peer-checked:scale-100">
+            <nav class="flex flex-col gap-3 text-gray-700">
+              <a href="#destinos">Destinos</a>
+              <a href="#servicios">Servicios</a>
+              <a href="#testimonios">Testimonios</a>
+              <a href="#contacto">Contacto</a>
+              <a href="#"
+                class="mt-2 inline-block px-3 py-2 text-sm rounded-md bg-teal-500 text-white text-center">Reservar</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero-bg h-[80vh] flex items-center text-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="max-w-2xl">
+          <h2 class="text-5xl font-extrabold drop-shadow-lg">Tu próxima aventura empieza con <span
+              class="text-yellow-300">Expreso Internacional</span></h2>
+          <p class="mt-4 text-lg text-teal-100">Viaja con estilo, conoce el mundo y crea recuerdos inolvidables.</p>
+
+          <form class="mt-6 bg-white/20 backdrop-blur-md p-4 rounded-xl grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <input class="px-3 py-2 rounded-md bg-white/80 text-gray-800" type="text"
+              placeholder="Destino (ej. Cartagena)" />
+            <input class="px-3 py-2 rounded-md bg-white/80 text-gray-800" type="date" />
+            <button
+              class="px-4 py-2 rounded-md bg-yellow-400 hover:bg-yellow-500 text-teal-900 font-semibold"><a href="cliente-invitado/cliente-invitado.php">Buscar</a></button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="py-16 bg-gradient-to-b from-teal-50 via-sky-100 to-cyan-50">
+      <div class="text-center">
+        <h3 class="text-3xl font-bold text-teal-700">Nuestros Servicios</h3>
+        <p class="mt-2 text-gray-600 max-w-2xl mx-auto">Soluciones completas para que viajar sea simple, cómodo y
+          especial.</p>
+      </div>
+
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 max-w-7xl mx-auto">
+        <div class="bg-gradient-to-br from-sky-50 to-white rounded-2xl p-8 shadow-md hover:shadow-xl transition">
+          <div class="text-4xl mb-3">✈️</div>
+          <h4 class="font-semibold text-lg">Vuelos internacionales</h4>
+          <p class="mt-2 text-slate-600 text-sm">Encuentra las mejores rutas y tarifas hacia los destinos más exóticos
+            del mundo.</p>
+        </div>
+        <div class="bg-gradient-to-br from-amber-50 to-white rounded-2xl p-8 shadow-md hover:shadow-xl transition">
+          <div class="text-4xl mb-3">🏖️</div>
+          <h4 class="font-semibold text-lg">Paquetes de playa</h4>
+          <p class="mt-2 text-slate-600 text-sm">Relájate en el Caribe colombiano, San Andrés o Cancún con todo
+            incluido.</p>
+        </div>
+        <div class="bg-gradient-to-br from-rose-50 to-white rounded-2xl p-8 shadow-md hover:shadow-xl transition">
+          <div class="text-4xl mb-3">🏔️</div>
+          <h4 class="font-semibold text-lg">Aventuras y naturaleza</h4>
+          <p class="mt-2 text-slate-600 text-sm">Explora el Eje Cafetero, el Amazonas o Machu Picchu con guías locales.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTINOS -->
+    <section id="destinos" class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-center">
+          <h3 class="text-3xl font-bold text-teal-700">Destinos Destacados</h3>
+          <a href="#" class="text-sm text-sky-600 hover:underline">Ver todos →</a>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="relative rounded-xl overflow-hidden shadow-lg group">
+            <img src="./img/cartagena.avif" class="w-full h-56 object-cover group-hover:scale-110 transition" />
+            <div class="absolute bottom-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
+              <h4 class="text-xl font-semibold">Cartagena</h4>
+              <p>Desde $1.200.000 COP</p>
+            </div>
+          </div>
+
+          <div class="relative rounded-xl overflow-hidden shadow-lg group">
+            <img src="./img/venezuela.avif" class="w-full h-56 object-cover group-hover:scale-110 transition" />
+            <div class="absolute bottom-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
+              <h4 class="text-xl font-semibold">Buenos Aires</h4>
+              <p>Desde $2.000.000 COP</p>
+            </div>
+          </div>
+
+          <div class="relative rounded-xl overflow-hidden shadow-lg group">
+            <img src="./img/china.avif" class="w-full h-56 object-cover group-hover:scale-110 transition" />
+            <div class="absolute bottom-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
+              <h4 class="text-xl font-semibold">China</h4>
+              <p>Desde $3.500.000 COP</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonios" class="bg-gradient-to-b from-teal-50 via-sky-100 to-cyan-50 py-20">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h3 class="text-3xl font-bold text-teal-700">Lo que dicen nuestros viajeros</h3>
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-gradient-to-br from-sky-100 to-white rounded-2xl p-8 shadow-md hover:shadow-xl transition">
+            <p class="text-slate-600 italic">“Un viaje inolvidable a San Andrés. Todo perfecto desde la reserva hasta el
+              regreso.”</p>
+            <p class="mt-4 font-semibold text-slate-700">— Laura Gómez</p>
+          </div>
+          <div class="bg-gradient-to-br from-amber-100 to-white rounded-2xl p-8 shadow-md hover:shadow-xl transition">
+            <p class="text-slate-600 italic">“Excelente atención y precios. Nos ayudaron a planear nuestro tour por
+              Europa.”</p>
+            <p class="mt-4 font-semibold text-slate-700">— Andrés Ramírez</p>
+          </div>
+          <div class="bg-gradient-to-br from-rose-100 to-white rounded-2xl p-8 shadow-md hover:shadow-xl transition">
+            <p class="text-slate-600 italic">“El servicio 24/7 marcó la diferencia. Siempre atentos y amables.”</p>
+            <p class="mt-4 font-semibold text-slate-700">— Natalia Rojas</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="py-16 bg-gradient-to-t from-teal-50 via-sky-100 to-yellow-50">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-1 gap-10">
+        <div>
+          <h3 class="text-3xl font-bold text-teal-700">¿Listo para planear tu viaje?</h3>
+          <p class="mt-2 text-gray-700">Comunícate con nosotros y recibe asesoría personalizada para tu próxima
+            aventura.</p>
+
+          <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
+            <li class="flex items-center gap-3"><span class="bg-sky-100 p-2 rounded-full">📞</span> +57 310 456 7890
+            </li>
+            <li class="flex items-center gap-3"><span class="bg-sky-100 p-2 rounded-full">✉️</span>
+              contacto@expresointernacional.co</li>
+            <li class="flex items-center gap-3"><span class="bg-sky-100 p-2 rounded-full">📍</span> Calle 45 #10-23,
+              Bogotá, Colombia</li>
+          </ul>
+        </div>
+
+        <form class="bg-white p-6 rounded-xl shadow-md space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input class="px-3 py-2 border rounded-md" type="text" placeholder="Nombre" />
+            <input class="px-3 py-2 border rounded-md" type="email" placeholder="Correo" />
+            <input class="px-3 py-2 border rounded-md" type="tel" placeholder="Teléfono" />
+            <select class="px-3 py-2 border rounded-md">
+              <option>Tipo de viaje</option>
+              <option>Playa</option>
+              <option>Cultural</option>
+              <option>Negocios</option>
+              <option>Familiar</option>
+            </select>
+          </div>
+          <textarea class="px-3 py-2 border rounded-md w-full" rows="4"
+            placeholder="Cuéntanos tu idea de viaje..."></textarea>
+          <div class="flex items-center justify-between">
+            <small class="text-gray-500">Respondemos en menos de 24 horas.</small>
+            <button class="px-4 py-2 rounded-md bg-teal-500 hover:bg-teal-600 text-white font-semibold">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gradient-to-r from-teal-700 to-cyan-600 text-white py-8">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-md bg-yellow-400 flex items-center justify-center font-bold text-teal-900">🌍
+        </div>
+        <div>
+          <p class="font-semibold">Expreso Internacional</p>
+          <p class="text-sm text-teal-100">© 2025. Todos los derechos reservados.</p>
+        </div>
+      </div>
+      <div class="flex gap-6 text-sm text-teal-50">
+        <a href="#">Términos</a>
+        <a href="#">Privacidad</a>
+        <a href="#">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

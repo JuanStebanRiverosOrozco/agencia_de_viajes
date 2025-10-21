@@ -13,52 +13,49 @@ El proyecto está diseñado para tres tipos de usuarios:
 ---
 
 ## 🧩 Estructura del Proyecto
-
 agencia_de_viajes/
 │
-├── admi/ → Panel de administración
-│ ├── admi.php
-│ ├── usuarios.php
-│ ├── agregar_usuario.php
-│ ├── editar_usuario.php
-│ └── eliminar_usuario.php
+├── admi/                      → Panel de administración
+│   ├── admi.php
+│   ├── usuarios.php
+│   ├── agregar_usuario.php
+│   ├── editar_usuario.php
+│   └── eliminar_usuario.php
 │
-├── cliente-invitado/ → Sección para clientes e invitados
-│ ├── cliente/
-│ │ ├── cliente.php
-│ │ ├── destinos.php
-│ │ ├── reservar.php
-│ │ └── perfil.php
-│ └── invitado/
-│ ├── invitado.php
-│ └── destinos.php
+├── cliente-invitado/          → Sección para clientes e invitados
+│   ├── cliente/
+│   │   ├── cliente.php
+│   │   ├── destinos.php
+│   │   ├── reservar.php
+│   │   └── perfil.php
+│   └── invitado/
+│       ├── invitado.php
+│       └── destinos.php
 │
-├── img/ → Imágenes del sitio (cartagena.avif, china.avif, etc.)
+├── img/                       → Imágenes del sitio (cartagena.avif, china.avif, etc.)
 │
-├── js/ → Archivos JavaScript (interactividad)
-│ ├── imagenes.js
-│ ├── menu.js
-│ └── registro-login.js
+├── js/                        → Archivos JavaScript (interactividad)
+│   ├── imagenes.js
+│   ├── menu.js
+│   └── registro-login.js
 │
-├── php/ → Backend y conexión a la base de datos
-│ ├── conexion.php
-│ ├── login.php
-│ └── registrar.php
+├── php/                       → Backend y conexión a la base de datos
+│   ├── conexion.php
+│   ├── login.php
+│   └── registrar.php
 │
-├── uploads/ → Imágenes subidas por los usuarios
+├── uploads/                   → Imágenes subidas por los usuarios
 │
-├── usuario/ → Panel de usuario registrado
-│ ├── usuario.php
-│ ├── reservas.php
-│ ├── perfil.php
-│ └── provincias.php
+├── usuario/                   → Panel de usuario registrado
+│   ├── usuario.php
+│   ├── reservas.php
+│   ├── perfil.php
+│   └── provincias.php
 │
-├── index.html → Página principal
-├── registro-login.html → Formulario de registro e inicio de sesión
-└── .git/ → Repositorio de control de versiones
+├── index.html                 → Página principal
+├── registro-login.html         → Formulario de registro e inicio de sesión
+└── .git/                      → Repositorio de control de versiones
 
-
----
 
 ## 🧠 Funcionalidades Principales
 

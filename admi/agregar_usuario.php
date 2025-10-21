@@ -94,13 +94,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <div class="relative group">
-          <a href="estadisticas.html" class="flex items-center justify-center lg:justify-start gap-3 px-6 py-3 hover:bg-teal-800 rounded-lg transition">
-            <i class="fa-solid fa-chart-pie text-xl"></i><span class="nav-text hidden">Estadísticas</span>
-          </a>
-          <span class="tooltip">Estadísticas</span>
-        </div>
-
-        <div class="relative group">
           <a href="perfil.php" class="flex items-center justify-center lg:justify-start gap-3 px-6 py-3 hover:bg-teal-800 rounded-lg transition">
             <i class="fa-solid fa-user-gear text-xl"></i><span class="nav-text hidden">Perfil</span>
           </a>

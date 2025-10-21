@@ -18,7 +18,7 @@ $usuario = $query->fetch_assoc();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Configuraciones - Panel de Administrador</title>
+  <title>Perfil</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
@@ -75,13 +75,6 @@ $usuario = $query->fetch_assoc();
             <i class="fa-solid fa-clipboard-list text-xl"></i><span class="nav-text hidden">Registros</span>
           </a>
           <span class="tooltip">Registros</span>
-        </div>
-
-        <div class="relative group">
-          <a href="estadisticas.html" class="flex items-center justify-center lg:justify-start gap-3 px-6 py-3 hover:bg-teal-800 rounded-lg transition">
-            <i class="fa-solid fa-chart-pie text-xl"></i><span class="nav-text hidden">Estadísticas</span>
-          </a>
-          <span class="tooltip">Estadísticas</span>
         </div>
 
         <div class="relative group">

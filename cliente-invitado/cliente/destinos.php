@@ -51,6 +51,7 @@ if ($stmt) {
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Destinos</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="./img/travel-agency-logo-with-location-icon-illustration-vector.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         /* Tooltip */
@@ -284,7 +285,7 @@ if ($stmt) {
                     <h2 class="text-xl font-semibold text-teal-800">Explora nuestras provincias</h2>
                     <p class="text-gray-600 mt-2">Descubre los mejores destinos, actividades y paquetes disponibles. Filtra por provincia y reserva tu viaje con facilidad.</p>
                 </div>
-                <div class="text-right">
+                <div class="text-left md:text-right">
                     <span class="text-sky-700 font-bold text-2xl"><?= count($provincias) ?></span>
                     <div class="text-sm text-gray-500">destinos disponibles</div>
                 </div>

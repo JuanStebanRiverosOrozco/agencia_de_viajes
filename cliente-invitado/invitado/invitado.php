@@ -14,6 +14,7 @@ $nombre_invitado = "Visitante";
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Panel Invitado</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="./img/travel-agency-logo-with-location-icon-illustration-vector.jpg" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -148,7 +149,7 @@ $nombre_invitado = "Visitante";
           <h2 class="text-3xl font-bold mb-2">¿Listo para tu próxima aventura?</h2>
           <p class="text-emerald-100">Crea una cuenta y disfruta de beneficios exclusivos, descuentos y más.</p>
         </div>
-        <a href="../registro-login.html" 
+        <a href="../../registro-login.html" 
            class="bg-white text-emerald-700 px-8 py-4 rounded-xl font-bold hover:bg-emerald-50 transition shadow-lg whitespace-nowrap">
           <i class="fa-solid fa-user-plus mr-2"></i>
           Registrarse Ahora

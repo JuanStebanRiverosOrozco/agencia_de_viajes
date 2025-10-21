@@ -24,6 +24,7 @@ if (isset($_GET['id'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Editar Usuario</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="./img/travel-agency-logo-with-location-icon-illustration-vector.jpg" type="image/x-icon">
 </head>
 <body class="bg-gradient-to-br from-white via-slate-50 to-sky-50 flex justify-center items-center min-h-screen">
 

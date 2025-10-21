@@ -15,81 +15,105 @@
   </style>
 </head>
 
-<body class="min-h-screen fondo-playa flex items-center justify-center text-slate-800">
-  <div class="bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-xl w-full max-w-md border border-white/30">
-    <div class="text-center mb-6">
-      <div class="mx-auto w-14 h-14 bg-yellow-400 rounded-md flex items-center justify-center text-teal-900 font-bold text-2xl">🌍</div>
-      <h1 class="text-2xl font-bold mt-3 text-teal-800">Bienvenido a Expreso Internacional</h1>
-      <p class="text-slate-600 text-sm">Inicia sesión o crea tu cuenta para comenzar tu próxima aventura</p>
+<body class="min-h-screen fondo-playa flex items-center justify-center text-slate-800 p-4">
+  <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl w-full max-w-5xl border border-white/30 overflow-hidden">
+    
+    <div class="grid md:grid-cols-2">
+      
+      <!-- Columna izquierda: Información -->
+      <div class="bg-gradient-to-br from-teal-700 to-teal-900 p-8 md:p-12 text-white flex flex-col justify-center">
+        <div class="mb-6">
+          <div class="w-16 h-16 bg-teal-400 rounded-xl flex items-center justify-center text-teal-900 font-bold text-3xl mb-4">🌍</div>
+          <h1 class="text-3xl font-bold mb-3">Bienvenido a Expreso Internacional</h1>
+          <p class="text-teal-100 text-lg">Inicia sesión o crea tu cuenta para comenzar tu próxima aventura</p>
+        </div>
+
+        <div class="space-y-4 mt-8">
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 bg-teal-400/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-teal-400 text-xl">✈️</span>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg">Destinos increíbles</h3>
+              <p class="text-teal-100 text-sm">Explora los mejores lugares del mundo</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 bg-teal-400/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-teal-400 text-xl">🎫</span>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg">Reservas fáciles</h3>
+              <p class="text-teal-100 text-sm">Sistema rápido y seguro de reservación</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 bg-teal-400/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-teal-400 text-xl">🌟</span>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg">Experiencias únicas</h3>
+              <p class="text-teal-100 text-sm">Crea momentos inolvidables</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna derecha: Formularios -->
+      <div class="p-8 md:p-12">
+        
+        <!-- Tabs -->
+        <div class="flex justify-around mb-8 border-b border-teal-100">
+          <button id="tab-login" class="w-1/2 pb-3 text-center font-semibold text-teal-700 border-b-2 border-teal-700 transition">Iniciar sesión</button>
+          <button id="tab-register" class="w-1/2 pb-3 text-center font-semibold text-slate-500 hover:text-teal-700 transition">Registrarse</button>
+        </div>
+
+        <!-- Formulario de inicio de sesión -->
+        <form id="form-login" action="./php/login.php" method="POST" class="space-y-5">
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-2">Correo electrónico</label>
+            <input type="email" name="correo" required placeholder="tuemail@ejemplo.com" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-2">Contraseña</label>
+            <input type="password" name="clave" required placeholder="••••••••" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent">
+          </div>
+          <button type="submit" class="w-full py-3 rounded-lg bg-teal-400 hover:bg-teal-500 text-teal-900 font-semibold shadow-md transition transform hover:scale-[1.02]">Iniciar sesión</button>
+        </form>
+
+        <!-- Formulario de registro -->
+        <form id="form-register" action="./php/registrar.php" method="POST" class="space-y-5 hidden">
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-2">Nombre completo</label>
+            <input type="text" name="nombre" required placeholder="Tu nombre" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-2">Correo electrónico</label>
+            <input type="email" name="correo" required placeholder="tuemail@ejemplo.com" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-2">Contraseña</label>
+            <input type="password" name="clave" required placeholder="Crea una contraseña" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-2">Selecciona tu rol</label>
+            <select name="rol" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent">
+              <option value="">Seleccionar...</option>
+              <option value="administrador">Administrador</option>
+              <option value="usuario">Usuario</option>
+              <option value="invitado">Cliente Invitado</option>
+            </select>
+          </div>
+          <button type="submit" class="w-full py-3 rounded-lg bg-teal-400 hover:bg-teal-500 text-teal-900 font-semibold shadow-md transition transform hover:scale-[1.02]">Crear cuenta</button>
+        </form>
+
+      </div>
+
     </div>
-
-    <!-- Tabs -->
-    <div class="flex justify-around mb-6 border-b border-teal-100">
-      <button id="tab-login" class="w-1/2 pb-2 text-center font-semibold text-teal-700 border-b-2 border-teal-700">Iniciar sesión</button>
-      <button id="tab-register" class="w-1/2 pb-2 text-center font-semibold text-slate-500 hover:text-teal-700">Registrarse</button>
-    </div>
-
-    <!-- Formulario de inicio de sesión -->
-    <form id="form-login" action="./php/login.php" method="POST" class="space-y-5">
-      <div>
-        <label class="block text-sm font-medium text-slate-700 mb-1">Correo electrónico</label>
-        <input type="email" name="correo" required placeholder="tuemail@ejemplo.com" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400">
-      </div>
-      <div>
-        <label class="block text-sm font-medium text-slate-700 mb-1">Contraseña</label>
-        <input type="password" name="clave" required placeholder="••••••••" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400">
-      </div>
-      <button type="submit" class="w-full py-2 rounded-lg bg-yellow-400 hover:bg-yellow-500 text-teal-900 font-semibold shadow-md">Iniciar sesión</button>
-    </form>
-
-    <!-- Formulario de registro -->
-    <form id="form-register" action="./php/registrar.php" method="POST" class="space-y-5 hidden">
-      <div>
-        <label class="block text-sm font-medium text-slate-700 mb-1">Nombre completo</label>
-        <input type="text" name="nombre" required placeholder="Tu nombre" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400">
-      </div>
-      <div>
-        <label class="block text-sm font-medium text-slate-700 mb-1">Correo electrónico</label>
-        <input type="email" name="correo" required placeholder="tuemail@ejemplo.com" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400">
-      </div>
-      <div>
-        <label class="block text-sm font-medium text-slate-700 mb-1">Contraseña</label>
-        <input type="password" name="clave" required placeholder="Crea una contraseña" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400">
-      </div>
-      <div>
-        <label class="block text-sm font-medium text-slate-700 mb-1">Selecciona tu rol</label>
-        <select name="rol" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
-          <option value="">Seleccionar...</option>
-          <option value="administrador">Administrador</option>
-          <option value="usuario">Usuario</option>
-          <option value="invitado">Cliente Invitado</option>
-        </select>
-      </div>
-      <button type="submit" class="w-full py-2 rounded-lg bg-yellow-400 hover:bg-yellow-500 text-teal-900 font-semibold shadow-md">Crear cuenta</button>
-    </form>
   </div>
 
-  <script>
-    const tabLogin = document.getElementById('tab-login');
-    const tabRegister = document.getElementById('tab-register');
-    const formLogin = document.getElementById('form-login');
-    const formRegister = document.getElementById('form-register');
-
-    tabLogin.addEventListener('click', () => {
-      formLogin.classList.remove('hidden');
-      formRegister.classList.add('hidden');
-      tabLogin.classList.add('text-teal-700', 'border-b-2', 'border-teal-700');
-      tabRegister.classList.remove('text-teal-700', 'border-b-2', 'border-teal-700');
-      tabRegister.classList.add('text-slate-500');
-    });
-
-    tabRegister.addEventListener('click', () => {
-      formLogin.classList.add('hidden');
-      formRegister.classList.remove('hidden');
-      tabRegister.classList.add('text-teal-700', 'border-b-2', 'border-teal-700');
-      tabLogin.classList.remove('text-teal-700', 'border-b-2', 'border-teal-700');
-      tabLogin.classList.add('text-slate-500');
-    });
-  </script>
+<script src="./js/registro-login.js"></script>
 </body>
 </html>

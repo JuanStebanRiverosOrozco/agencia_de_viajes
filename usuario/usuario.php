@@ -142,7 +142,7 @@
         <i class="fa-solid fa-gear text-yellow-500 text-4xl mb-3"></i>
         <h2 class="text-lg font-semibold text-teal-800">Configuración</h2>
         <p class="text-gray-600 mt-2 mb-4">Actualiza tu información personal o cambia tu contraseña.</p>
-        <a href="configuracion_usuario.php" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-medium px-5 py-2 rounded-lg transition">Ir a Configuración</a>
+        <a href="perfil.php" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-medium px-5 py-2 rounded-lg transition">Ir a Configuración</a>
       </div>
     </section>
   </main>

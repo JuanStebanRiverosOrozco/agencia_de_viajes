@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../php/conexion.php');
+include('../../php/conexion.php');
 
 // aceptar destino/provincia tanto por GET como por POST
 $id_destino = $_REQUEST['destino'] ?? $_REQUEST['provincia'] ?? null;
@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($stmt->execute()) {
         echo "<script>
                 alert('✅ Reserva registrada. Nos contactaremos contigo pronto.');
-                window.location.href = '../cliente-invitado/destinos.php'; 
+                window.location.href = '../cliente/destinos.php'; 
               </script>";
         $stmt->close();
         $conexion->close();
@@ -142,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body class="font-sans">
     <div class="max-w-4xl mx-auto p-6 py-12">
         <!-- Back Button -->
-        <a href="/agencia/viajes/invitado/detalle_destino.php?id=<?= htmlspecialchars($id_destino) ?>" 
+        <a href="detalle_destino.php?id=<?= htmlspecialchars($id_destino) ?>" 
            class="inline-flex items-center gap-2 text-teal-700 hover:text-teal-900 font-medium mb-8 transition hover:gap-3 animate-fade-in">
             <i class="fa-solid fa-arrow-left"></i>
             <span>Volver al destino</span>

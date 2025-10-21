@@ -141,7 +141,7 @@ $resultado = $conexion->query($query);
         <table class="min-w-full text-sm text-slate-700">
           <thead class="bg-gradient-to-r from-teal-600 to-cyan-600 text-white text-left">
             <tr>
-              <th class="py-4 px-6 font-semibold">#</th>
+              <th class="py-4 px-6 font-semibold">ID</th>
               <th class="py-4 px-6 font-semibold">Usuario</th>
               <th class="py-4 px-6 font-semibold">Correo</th>
               <th class="py-4 px-6 font-semibold">Teléfono</th>

@@ -1,13 +1,11 @@
 <?php
 // invitado/panel_invitado.php
 session_start();
-include('../php/conexion.php'); 
+include('../../php/conexion.php'); 
 
-// Verificar si hay un usuario logueado con rol 3
-$es_invitado_logueado = isset($_SESSION['id_rol']) && $_SESSION['id_rol'] == 3;
-
-// Obtener nombre del usuario si existe, si no mostrar "Visitante"
-$nombre_invitado = isset($_SESSION['nombre_usuario']) ? htmlspecialchars($_SESSION['nombre_usuario']) : "Visitante";
+// Esta página es para visitantes no logueados o cualquiera
+// No requiere autenticación, pero muestra opciones de inicio de sesión
+$nombre_invitado = "Visitante";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -70,7 +68,7 @@ $nombre_invitado = isset($_SESSION['nombre_usuario']) ? htmlspecialchars($_SESSI
       <!-- Navegación -->
       <nav class="mt-8 space-y-3">
         <div class="relative group">
-          <a href="cliente-invitado.php" class="flex items-center gap-3 px-6 py-3 hover:bg-cyan-800 rounded-lg transition">
+          <a href="invitado.php" class="flex items-center gap-3 px-6 py-3 bg-cyan-800 rounded-lg transition">
             <i class="fa-solid fa-house text-xl"></i>
             <span class="nav-text hidden">Inicio</span>
           </a>
@@ -85,25 +83,24 @@ $nombre_invitado = isset($_SESSION['nombre_usuario']) ? htmlspecialchars($_SESSI
           <span class="tooltip">Ver Paquetes</span>
         </div>
 
-        <?php if (!$es_invitado_logueado): ?>
+        <!-- Botón de Iniciar Sesión en el sidebar -->
         <div class="relative group">
-          <a href="../registro-login.html" class="flex items-center gap-3 px-6 py-3 hover:bg-cyan-800 rounded-lg transition">
+          <a href="../../registro-login.html" class="flex items-center gap-3 px-6 py-3 hover:bg-cyan-800 rounded-lg transition">
             <i class="fa-solid fa-user-plus text-xl"></i>
             <span class="nav-text hidden">Iniciar Sesión</span>
           </a>
           <span class="tooltip">Iniciar Sesión</span>
         </div>
-        <?php endif; ?>
       </nav>
     </div>
 
     <div class="border-t border-cyan-700 py-4 hover:bg-cyan-800">
       <div class="relative group">
-        <a href="../index.html" class="flex items-center gap-3 px-6 py-3 transition rounded-lg">
+        <a href="../../index.html" class="flex items-center gap-3 px-6 py-3 transition rounded-lg">
           <i class="fa-solid fa-door-open"></i>
-          <span class="nav-text hidden">Cerrar sesión</span>
+          <span class="nav-text hidden">Salir</span>
         </a>
-        <span class="tooltip">Cerrar sesión</span>
+        <span class="tooltip">Salir</span>
       </div>
     </div>
   </aside>
@@ -125,8 +122,7 @@ $nombre_invitado = isset($_SESSION['nombre_usuario']) ? htmlspecialchars($_SESSI
         <a href="destinos.php" class="inline-block bg-sky-600 hover:bg-sky-700 text-white font-medium px-5 py-2 rounded-lg transition">Ver Paquetes</a>
       </div>
 
-      <?php if (!$es_invitado_logueado): ?>
-      <!-- Iniciar sesión - Solo visible si NO está logueado -->
+      <!-- Iniciar sesión - SIEMPRE visible para visitantes -->
       <div class="relative overflow-hidden bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all border border-slate-200">
         <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-emerald-400/20 to-transparent rounded-bl-full"></div>
         <i class="fa-solid fa-user-plus text-emerald-600 text-4xl mb-3"></i>
@@ -134,7 +130,6 @@ $nombre_invitado = isset($_SESSION['nombre_usuario']) ? htmlspecialchars($_SESSI
         <p class="text-gray-600 mt-2 mb-4">Accede a tu cuenta para gestionar reservas y preferencias.</p>
         <a href="../registro-login.html" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-5 py-2 rounded-lg transition">Iniciar Sesión</a>
       </div>
-      <?php endif; ?>
 
       <!-- Sobre Nosotros -->
       <div class="relative overflow-hidden bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all border border-slate-200">
@@ -145,7 +140,22 @@ $nombre_invitado = isset($_SESSION['nombre_usuario']) ? htmlspecialchars($_SESSI
         <a href="#" class="inline-block bg-teal-600 hover:bg-teal-700 text-white font-medium px-5 py-2 rounded-lg transition">Saber Más</a>
       </div>
     </section>
+
+    <!-- Banner adicional para invitar a registrarse -->
+    <section class="mt-12 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-3xl p-8 text-white shadow-2xl">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h2 class="text-3xl font-bold mb-2">¿Listo para tu próxima aventura?</h2>
+          <p class="text-emerald-100">Crea una cuenta y disfruta de beneficios exclusivos, descuentos y más.</p>
+        </div>
+        <a href="../registro-login.html" 
+           class="bg-white text-emerald-700 px-8 py-4 rounded-xl font-bold hover:bg-emerald-50 transition shadow-lg whitespace-nowrap">
+          <i class="fa-solid fa-user-plus mr-2"></i>
+          Registrarse Ahora
+        </a>
+      </div>
+    </section>
   </main>
- <script type="module" src="../js/menu.js"></script>
+ <script type="module" src="../../js/menu.js"></script>
 </body>
 </html>

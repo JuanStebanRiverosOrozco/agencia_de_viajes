@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../php/conexion.php');
+include('../../php/conexion.php');
 
 // Verificar si hay un usuario logueado con rol 3
 $es_invitado_logueado = isset($_SESSION['id_rol']) && $_SESSION['id_rol'] == 3;
@@ -224,7 +224,7 @@ if ($stmt) {
             <!-- Navegación -->
             <nav class="mt-8 space-y-3">
                 <div class="relative group">
-                    <a href="cliente-invitado.php" class="flex items-center gap-3 px-6 py-3 hover:bg-cyan-800 rounded-lg transition">
+                    <a href="cliente.php" class="flex items-center gap-3 px-6 py-3 hover:bg-cyan-800 rounded-lg transition">
                         <i class="fa-solid fa-house text-xl"></i>
                         <span class="nav-text hidden">Inicio</span>
                     </a>
@@ -239,21 +239,26 @@ if ($stmt) {
                     <span class="tooltip">Ver Paquetes</span>
                 </div>
 
-                <?php if (!$es_invitado_logueado): ?>
+        <div class="relative group">
+          <a href="mis_reservas.php" class="flex items-center gap-3 px-6 py-3 hover:bg-cyan-800 rounded-lg transition">
+            <i class="fa-solid fa-clipboard-list text-xl"></i>
+            <span class="nav-text hidden">Mis Reservas</span>
+          </a>
+          <span class="tooltip">Mis Reservas</span>
+        </div>
                 <div class="relative group">
-                    <a href="../registro-login.html" class="flex items-center gap-3 px-6 py-3 hover:bg-cyan-800 rounded-lg transition">
-                        <i class="fa-solid fa-user-plus text-xl"></i>
-                        <span class="nav-text hidden">Iniciar Sesión</span>
-                    </a>
-                    <span class="tooltip">Iniciar Sesión</span>
-                </div>
-                <?php endif; ?>
+          <a href="perfil.php" class="flex items-center gap-3 px-6 py-3 hover:bg-teal-800 rounded-lg transition">
+            <i class="fa-solid fa-user-gear text-xl"></i>
+            <span class="nav-text hidden">Perfil</span>
+          </a>
+          <span class="tooltip">Perfil</span>
+        </div>
             </nav>
         </div>
 
         <div class="border-t border-cyan-700 py-4 hover:bg-cyan-800">
             <div class="relative group">
-                <a href="../index.html" class="flex items-center gap-3 px-6 py-3 transition rounded-lg">
+                <a href="../../index.html" class="flex items-center gap-3 px-6 py-3 transition rounded-lg">
                     <i class="fa-solid fa-door-open"></i>
                     <span class="nav-text hidden">Cerrar sesión</span>
                 </a>
@@ -312,7 +317,7 @@ if ($stmt) {
                         $primeraImagen = trim($imagenes[0]);
                         
                         if (!empty($primeraImagen)) {
-                            $imgSrc = '../uploads/' . $primeraImagen;
+                            $imgSrc = '../../uploads/' . $primeraImagen;
                         }
                     }
                     
@@ -353,11 +358,11 @@ if ($stmt) {
                             
                             <!-- Botones -->
                             <div class="flex gap-3">
-                                <a href="./detalle_destino.php?id=<?= urlencode($p['id']) ?>" 
+                                <a href="detalle_destino.php?id=<?= urlencode($p['id']) ?>" 
                                    class="btn-primary flex-1 text-center">
                                     <i class="fa-solid fa-circle-info mr-2"></i>Más detalles
                                 </a>
-                                <a href="./reservar.php?provincia=<?= urlencode($p['id']) ?>" 
+                                <a href="reservar.php?provincia=<?= urlencode($p['id']) ?>" 
                                    class="btn-secondary flex-1 text-center">
                                     <i class="fa-solid fa-calendar-check mr-2"></i>Reservar
                                 </a>
@@ -371,6 +376,6 @@ if ($stmt) {
         <?php endif; ?>
 
     </main>
-    <script type="module" src="../js/menu.js"></script>
+    <script type="module" src="../../js/menu.js"></script>
 </body>
 </html>

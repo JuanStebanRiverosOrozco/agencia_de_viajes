@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../php/conexion.php');
+include('../../php/conexion.php');
 
 // Verificar si hay un usuario logueado con rol 3
 $es_invitado_logueado = isset($_SESSION['id_rol']) && $_SESSION['id_rol'] == 3;
@@ -43,7 +43,7 @@ if (!empty($destino['imagen'])) {
     foreach ($imgs as $img) {
         $img = trim($img);
         if (!empty($img)) {
-            $imagenes[] = '../uploads/' . $img;
+            $imagenes[] = '../../uploads/' . $img;
         }
     }
 }
@@ -207,7 +207,7 @@ foreach (['precio', 'precio_desde', 'costo', 'tarifa', 'precio_base'] as $f) {
             <!-- Navegación -->
             <nav class="mt-8 space-y-3">
                 <div class="relative group">
-                    <a href="cliente-invitado.php" class="flex items-center gap-3 px-6 py-3 hover:bg-cyan-800 rounded-lg transition">
+                    <a href="cliente.php" class="flex items-center gap-3 px-6 py-3 hover:bg-cyan-800 rounded-lg transition">
                         <i class="fa-solid fa-house text-xl"></i>
                         <span class="nav-text hidden">Inicio</span>
                     </a>
@@ -222,21 +222,28 @@ foreach (['precio', 'precio_desde', 'costo', 'tarifa', 'precio_base'] as $f) {
                     <span class="tooltip">Ver Paquetes</span>
                 </div>
 
-                <?php if (!$es_invitado_logueado): ?>
+                    <div class="relative group">
+          <a href="mis_reservas.php" class="flex items-center gap-3 px-6 py-3 hover:bg-cyan-800 rounded-lg transition">
+            <i class="fa-solid fa-clipboard-list text-xl"></i>
+            <span class="nav-text hidden">Mis Reservas</span>
+          </a>
+          <span class="tooltip">Mis Reservas</span>
+        </div>
                 <div class="relative group">
-                    <a href="../registro-login.html" class="flex items-center gap-3 px-6 py-3 hover:bg-cyan-800 rounded-lg transition">
-                        <i class="fa-solid fa-user-plus text-xl"></i>
-                        <span class="nav-text hidden">Iniciar Sesión</span>
-                    </a>
-                    <span class="tooltip">Iniciar Sesión</span>
-                </div>
-                <?php endif; ?>
+          <a href="perfil.php" class="flex items-center gap-3 px-6 py-3 hover:bg-teal-800 rounded-lg transition">
+            <i class="fa-solid fa-user-gear text-xl"></i>
+            <span class="nav-text hidden">Perfil</span>
+          </a>
+          <span class="tooltip">Perfil</span>
+        </div>
+            </nav>
+        </div>
             </nav>
         </div>
 
         <div class="border-t border-cyan-700 py-4 hover:bg-cyan-800">
             <div class="relative group">
-                <a href="../index.html" class="flex items-center gap-3 px-6 py-3 transition rounded-lg">
+                <a href="../../index.html" class="flex items-center gap-3 px-6 py-3 transition rounded-lg">
                     <i class="fa-solid fa-door-open"></i>
                     <span class="nav-text hidden">Cerrar sesión</span>
                 </a>
@@ -387,7 +394,7 @@ foreach (['precio', 'precio_desde', 'costo', 'tarifa', 'precio_base'] as $f) {
 
     </main>
 
-    <script type="module" src="../js/menu.js"></script>
-<script type="module" src="../js/imagenes.js"></script>
+    <script type="module" src="../../js/menu.js"></script>
+    <script src="../../js/imagenes.js"></script>
 </body>
 </html>

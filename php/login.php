@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     header("Location: ../usuario/usuario.php");
                     break;
                 case 3: // Invitado
-                    header("Location: ../cliente-invitado/cliente-invitado.php");
+                    header("Location: ../cliente-invitado/cliente/cliente.php");
                     break;
                 default:
                     echo "<script>alert('Rol no válido'); window.history.back();</script>";

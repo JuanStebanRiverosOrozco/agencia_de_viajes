@@ -10,7 +10,7 @@ $resultado = $conexion->query("SELECT * FROM cuenta ORDER BY id_usuario ASC");
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Panel de Usuarios</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" href="./img/travel-agency-logo-with-location-icon-illustration-vector.jpg" type="image/x-icon">
+  <link rel="icon" href="../img/travel-agency-logo-with-location-icon-illustration-vector.jpg" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     .tooltip {
@@ -67,7 +67,13 @@ $resultado = $conexion->query("SELECT * FROM cuenta ORDER BY id_usuario ASC");
           </a>
           <span class="tooltip">Registros</span>
         </div>
-
+        <div class="relative group">
+          <a href="provincias.php" class="flex items-center gap-3 px-6 py-3 hover:bg-teal-800 rounded-lg transition">
+            <i class="fa-solid fa-map-location-dot text-xl"></i>
+          <span class="nav-text hidden">Provincias</span>
+          </a>
+        <span class="tooltip">Provincias</span>
+        </div>
         <div class="relative group">
           <a href="perfil.php" class="flex items-center justify-center lg:justify-start gap-3 px-6 py-3 hover:bg-teal-800 rounded-lg transition">
             <i class="fa-solid fa-user-gear text-xl"></i><span class="nav-text hidden">Perfil</span>

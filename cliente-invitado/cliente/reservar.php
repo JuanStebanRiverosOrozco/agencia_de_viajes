@@ -75,6 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Reservar Destino</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="../../img/travel-agency-logo-with-location-icon-illustration-vector.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         body {
@@ -181,7 +182,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             Nombre completo <span class="text-red-500">*</span>
                         </span>
                     </label>
-                    <input name="nombre" 
+                    <input name="nombre"
                            required 
                            class="input-field block w-full rounded-xl bg-white"
                            placeholder="Ingresa tu nombre completo"

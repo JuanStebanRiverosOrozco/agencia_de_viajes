@@ -25,6 +25,7 @@ $usuariosPorRol = [
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Panel Administrador</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../img/travel-agency-logo-with-location-icon-illustration-vector.jpg" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     .tooltip {
@@ -81,6 +82,13 @@ $usuariosPorRol = [
             <i class="fa-solid fa-clipboard-list text-xl"></i><span class="nav-text hidden">Registros</span>
           </a>
           <span class="tooltip">Registros</span>
+        </div>
+        <div class="relative group">
+          <a href="provincias.php" class="flex items-center gap-3 px-6 py-3 hover:bg-teal-800 rounded-lg transition">
+            <i class="fa-solid fa-map-location-dot text-xl"></i>
+          <span class="nav-text hidden">Provincias</span>
+          </a>
+        <span class="tooltip">Provincias</span>
         </div>
         <div class="relative group">
           <a href="perfil.php" class="flex items-center justify-center lg:justify-start gap-3 px-6 py-3 hover:bg-teal-800 transition rounded-lg">
@@ -190,7 +198,7 @@ $usuariosPorRol = [
             <i class="fa-solid fa-location-dot text-5xl text-teal-300"></i>
           </div>
 
-          <a href="../usuario/provincias.php" class="block w-full text-center py-3 bg-gradient-to-r from-sky-600 to-cyan-600 hover:from-sky-700 hover:to-cyan-700 text-white font-semibold rounded-xl transition shadow-md hover:shadow-lg">
+          <a href="provincias.php" class="block w-full text-center py-3 bg-gradient-to-r from-sky-600 to-cyan-600 hover:from-sky-700 hover:to-cyan-700 text-white font-semibold rounded-xl transition shadow-md hover:shadow-lg">
             <i class="fa-solid fa-eye mr-2"></i>Ver todos los destinos
           </a>
         </div>

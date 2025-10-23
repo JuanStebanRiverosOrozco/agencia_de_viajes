@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $correo = trim($_POST['correo'] ?? '');
     $clave = $_POST['clave'] ?? '';
 
-    $stmt = $conexion->prepare("SELECT id_usuario, nombre_usuario, contraseña, id_rol FROM cuenta WHERE correo = ?");
+    $stmt = $conexion->prepare("SELECT id_usuario, nombre_usuario, contraseña, correo, id_rol FROM cuenta WHERE correo = ?");
     $stmt->bind_param("s", $correo);
     $stmt->execute();
     $res = $stmt->get_result();
@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             // Guardar sesión
             $_SESSION['id_usuario'] = $user['id_usuario'];
             $_SESSION['nombre_usuario'] = $user['nombre_usuario'];
+            $_SESSION['correo'] = $user['correo'];
             $_SESSION['id_rol'] = $user['id_rol'];
 
             // Redirección según el rol

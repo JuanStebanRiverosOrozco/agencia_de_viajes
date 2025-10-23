@@ -1,5 +1,4 @@
 <?php
-session_start();
 include('../../php/conexion.php');
 
 // Verificar si hay un usuario logueado con rol 3
@@ -82,6 +81,7 @@ foreach (['precio', 'precio_desde', 'costo', 'tarifa', 'precio_base'] as $f) {
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title><?= $nombre ?></title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="../../img/travel-agency-logo-with-location-icon-illustration-vector.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         /* Tooltip */

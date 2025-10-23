@@ -1,6 +1,5 @@
 <?php
-// invitado/panel_invitado.php
-session_start();
+
 include('../../php/conexion.php'); 
 
 // Esta página es para visitantes no logueados o cualquiera
@@ -14,7 +13,7 @@ $nombre_invitado = "Visitante";
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Panel Invitado</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" href="./img/travel-agency-logo-with-location-icon-illustration-vector.jpg" type="image/x-icon">
+  <link rel="icon" href="../../img/travel-agency-logo-with-location-icon-illustration-vector.jpg" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>

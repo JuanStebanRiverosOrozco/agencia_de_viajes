@@ -1,7 +1,9 @@
 <?php
 include("../php/conexion.php");
-
+session_start();
 $id = $_GET['id'] ?? null;
+$usuario = $_SESSION['id_rol'];
+$conexion->query("SET @usuario_app = '$usuario'");
 
 if (!$id) {
     header("Location: provincias.php");
@@ -115,6 +117,7 @@ if (!empty($provincia['imagen'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Editar Provincia</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../img/travel-agency-logo-with-location-icon-illustration-vector.jpg" type="image/x-icon">
   <style>
     .preview-container {
       display: grid;

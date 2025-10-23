@@ -1,9 +1,15 @@
 <?php
 include("../php/conexion.php");
+session_start();
+$id = $_GET['id'] ?? null;
+$usuario = $_SESSION['id_rol'];
+$conexion->query("SET @usuario_app = '$usuario'");
+
 
 // Consultar datos con JOIN a provincias y usuarios
 $query = "
   SELECT 
+    r.id_reserva,
     r.id_usuario,
     u.nombre_usuario AS nombre_usuario,
     r.correo,
@@ -28,7 +34,7 @@ $resultado = $conexion->query($query);
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Estado de Reservas</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" href="./img/travel-agency-logo-with-location-icon-illustration-vector.jpg" type="image/x-icon">
+  <link rel="icon" href="../img/travel-agency-logo-with-location-icon-illustration-vector.jpg" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
@@ -134,7 +140,7 @@ $resultado = $conexion->query($query);
   </aside>
 
   <!-- 🧭 Contenido principal -->
-  <main id="mainContent" class="p-8 pl-28 sm:pl-32 lg:pl-36 transition-all duration-300 relative z-10 bg-gradient-to-br from-white via-slate-50 to-sky-50 min-h-screen">
+  <main id="mainContent" class="p-8 pl-12 sm:pl-12 lg:pl-12 transition-all duration-300 relative z-10 bg-gradient-to-br from-white via-slate-50 to-sky-50 min-h-screen">
     <div class="bg-white rounded-3xl shadow-xl p-8 border border-slate-200">
       <h1 class="text-3xl font-bold mb-6 text-center text-teal-800">📊 Estado de Reservas</h1>
 
@@ -142,7 +148,8 @@ $resultado = $conexion->query($query);
         <table class="min-w-full text-sm text-slate-700">
           <thead class="bg-gradient-to-r from-teal-600 to-cyan-600 text-white text-left">
             <tr>
-              <th class="py-4 px-6 font-semibold">ID</th>
+              <th class="py-4 px-6 font-semibold">ID Reserva</th>
+              <th class="py-4 px-6 font-semibold">ID Usuario</th>
               <th class="py-4 px-6 font-semibold">Usuario</th>
               <th class="py-4 px-6 font-semibold">Correo</th>
               <th class="py-4 px-6 font-semibold">Teléfono</th>
@@ -151,12 +158,14 @@ $resultado = $conexion->query($query);
               <th class="py-4 px-6 font-semibold">Comentarios</th>
               <th class="py-4 px-6 font-semibold">Fecha creación</th>
               <th class="py-4 px-6 font-semibold">Provincia</th>
+              <th class="py-4 px-6 font-semibold text-center">Acciones</th>
             </tr>
           </thead>
 
           <tbody>
             <?php while ($fila = $resultado->fetch_assoc()) { ?>
             <tr class="odd:bg-white even:bg-slate-50 hover:bg-emerald-50 transition-colors duration-200">
+              <td class="py-3 px-6"><?= $fila['id_reserva'] ?></td>
               <td class="py-3 px-6"><?= $fila['id_usuario'] ?></td>
               <td class="py-3 px-6"><?= htmlspecialchars($fila['nombre_usuario']) ?></td>
               <td class="py-3 px-6"><?= htmlspecialchars($fila['correo']) ?></td>
@@ -166,6 +175,22 @@ $resultado = $conexion->query($query);
               <td class="py-3 px-6"><?= htmlspecialchars($fila['comentarios']) ?></td>
               <td class="py-3 px-6"><?= htmlspecialchars($fila['fecha_creacion']) ?></td>
               <td class="py-3 px-6"><?= htmlspecialchars($fila['nombre_provincia'] ?? '—') ?></td>
+
+              <!-- 🟡🔴 Botones de acción -->
+              <td class="py-3 px-6">
+                <div class="flex flex-wrap justify-center gap-3 sm:flex-nowrap sm:gap-4 md:flex md:space-x-4 lg:justify-start">
+                  <a href="editar_reserva.php?id=<?= $fila['id_usuario'] ?>"
+                    class="flex-1 sm:flex-none text-center bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition transform hover:scale-105 w-full sm:w-28">
+                    Editar
+                  </a>
+
+                  <a href="eliminar_reserva.php?id=<?= $fila['id_reserva'] ?>"
+                    onclick="return confirm('¿Estás seguro de que deseas eliminar esta reserva?');"
+                    class="flex-1 sm:flex-none text-center bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition transform hover:scale-105 w-full sm:w-28">
+                    Borrar
+                  </a>
+                </div>
+              </td>
             </tr>
             <?php } ?>
           </tbody>

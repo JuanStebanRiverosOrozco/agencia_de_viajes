@@ -12,14 +12,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         case "administrador":
             $id_rol = 1;
             break;
-        case "usuario":
+        case "empleado":
             $id_rol = 2;
             break;
-        case "invitado":
+        case "cliente":
             $id_rol = 3;
             break;
         default:
-            $id_rol = 3;
+            $id_rol = 0;
     }
 
     // Encriptar la contraseña antes de guardar

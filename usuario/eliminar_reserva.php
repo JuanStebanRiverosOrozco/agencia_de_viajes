@@ -6,11 +6,11 @@ $usuario = $_SESSION['id_rol'];
 $conexion->query("SET @usuario_app = '$usuario'");
 
 if ($id) {
-    $stmt = $conexion->prepare("DELETE FROM provincia WHERE id_provincia = ?");
+    $stmt = $conexion->prepare("DELETE FROM reservas WHERE id_reserva = ?");
     $stmt->bind_param("i", $id);
     $stmt->execute();
 }
 
-header("Location: provincias.php");
+header("Location: reservas.php");
 exit;
 ?>

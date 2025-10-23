@@ -75,6 +75,13 @@ $resultado = $conexion->query("SELECT * FROM cuenta ORDER BY id_usuario ASC");
         <span class="tooltip">Provincias</span>
         </div>
         <div class="relative group">
+          <a href="reservas.php" class="flex items-center gap-3 px-6 py-3 hover:bg-teal-800 rounded-lg transition">
+            <i class="fa-solid fa-calendar-days text-xl"></i>
+            <span class="nav-text hidden">Reservas</span>
+          </a>
+          <span class="tooltip">Reservas</span>
+        </div>
+        <div class="relative group">
           <a href="perfil.php" class="flex items-center justify-center lg:justify-start gap-3 px-6 py-3 hover:bg-teal-800 rounded-lg transition">
             <i class="fa-solid fa-user-gear text-xl"></i><span class="nav-text hidden">Perfil</span>
           </a>
